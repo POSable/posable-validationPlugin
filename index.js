@@ -6,4 +6,9 @@ function ValPlugin () {
     this.transaction = ValTransactionObj;
 }
 
+ValPlugin.prototype.validateTrans = function (transactionObj){
+    var valObject =  new ValTransactionObj();
+    return valObject.validateTransaction(transactionObj);
+};
+
 module.exports = new ValPlugin();

@@ -53,4 +53,4 @@ ValTransactionObj.prototype.validateTransaction = function(transactionDTO) {
     return this;
 };
 
-module.exports = new ValTransactionObj();
+module.exports = ValTransactionObj;
