@@ -1,0 +1,26 @@
+{
+  "name": "posable-validation-plugin",
+  "version": "1.0.0",
+  "description": "validates payment/transaction data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/POSable/posable-validationPlugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/POSable/posable-validationPlugin/issues"
+  },
+  "homepage": "https://github.com/POSable/posable-validationPlugin#readme",
+  "dependencies": {
+    "posable-logging-plugin": "git+ssh://git@github.com/POSable/posable-logPlugin.git",
+    "validator": "^4.2.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.3.2"
+  }
+}
