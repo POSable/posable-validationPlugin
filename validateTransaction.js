@@ -1,5 +1,5 @@
 var validator = require('validator');
-var valPayment = require('./validatePayment');
+var ValPaymentObj = require('./validatePayment');
 
 function ValTransactionObj() {
     this.validator = validator;
@@ -33,7 +33,8 @@ ValTransactionObj.prototype.valTransPayments = function() {
     var messages = {};
     var valid = [];
     this.payments.forEach(function (payment) {
-        var eachPayment = valPayment.validatePay(payment);
+        var valPayment = new ValPaymentObj();
+        var eachPayment = valPayment.validatePayment(payment);
         messages = eachPayment.message;
         valid.push(eachPayment.isValid); });
 
