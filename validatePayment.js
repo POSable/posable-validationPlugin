@@ -89,4 +89,4 @@ ValPaymentObj.prototype.validatePayment = function(paymentDTO) {
     return this;
 };
 
-module.exports = new ValPaymentObj();
+module.exports = ValPaymentObj;
