@@ -30,15 +30,16 @@ ValTransactionObj.prototype.valCashierID = function() {
         this.isValid = false; } };
 
 ValTransactionObj.prototype.valTransPayments = function() {
-    var messages = {};
+    var messages = [];
     var valid = [];
     this.payments.forEach(function (payment) {
         var valPayment = new ValPaymentObj();
         var eachPayment = valPayment.validatePayment(payment);
-        messages = eachPayment.message;
+        if (Object.keys(eachPayment.message).length > 0) {
+            messages = eachPayment.message; }
         valid.push(eachPayment.isValid); });
 
-    this.message = messages;
+    this.message.payments = messages;
     if (valid.indexOf(false) > -1){ this.isValid = false; } };
 
 ValTransactionObj.prototype.validateTransaction = function(transactionDTO) {
