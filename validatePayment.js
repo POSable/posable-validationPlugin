@@ -64,6 +64,11 @@ ValPaymentObj.prototype.valUID = function() {
         this.message.uid = 'Invalid UID';
         this.isValid = false; } };
 
+ValPaymentObj.prototype.valDate = function() {
+    if (!this.validator.isDate(this.payload.dateTime)) {
+        this.message.dateTime = 'Invalid Date/Time';
+        this.isValid = false; } };
+
 ValPaymentObj.prototype.valTransactionID = function() {
     if (!this.validator.isAlphanumeric(this.payload.transactionID)) {
         this.message.transactionID = 'Invalid transaction ID';
@@ -74,6 +79,7 @@ ValPaymentObj.prototype.validatePayment = function(paymentDTO) {
 
     this.valTerminalID();
     this.valTransactionID();
+    this.valDate();
     this.valAmount();
     this.valPaymentType();
     this.valTax();
