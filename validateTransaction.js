@@ -42,7 +42,7 @@ ValTransactionObj.prototype.valTransPayments = function() {
     this.message.payments = messages;
     if (valid.indexOf(false) > -1){ this.isValid = false; } };
 
-ValTransactionObj.prototype.validateTransaction = function(transactionDTO) {
+ValTransactionObj.prototype.valTransaction = function(transactionDTO) {
     this.payload = transactionDTO.transaction;
     this.payments = transactionDTO.transaction.payments;
 
