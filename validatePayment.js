@@ -74,7 +74,7 @@ ValPaymentObj.prototype.valTransactionID = function() {
         this.message.transactionID = 'Invalid transaction ID';
         this.isValid = false; } };
 
-ValPaymentObj.prototype.validatePayment = function(paymentDTO) {
+ValPaymentObj.prototype.valPayment = function(paymentDTO) {
     this.payload = paymentDTO;
 
     this.valTerminalID();
