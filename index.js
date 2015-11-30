@@ -1,18 +1,18 @@
 var ValPaymentObj = require('./validatePayment');
 var ValTransactionObj = require('./validateTransaction');
 
-function ValPlugin () { this.testObj = {}; }
+function ValPlugin () { this.testObj = ''; }
 
 ValPlugin.prototype.validateTransaction = function (transactionObj){
     var valObject;
-    if (!this.testObj) { valObject = new ValTransactionObj(); }
+    if (this.testObj == '') { valObject = new ValTransactionObj(); }
     else { valObject = this.testObj; }
 
     return valObject.valTransaction(transactionObj); };
 
 ValPlugin.prototype.validatePayment = function (paymentObj){
     var valObject;
-    if (!this.testObj) { valObject = new ValPaymentObj(); }
+    if (this.testObj == '') { valObject = new ValPaymentObj(); }
     else { valObject = this.testObj; }
 
     return valObject.valPayment(paymentObj); };

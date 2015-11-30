@@ -34,7 +34,7 @@ ValTransactionObj.prototype.valTransPayments = function() {
     var valid = [];
     this.payments.forEach(function (payment) {
         var valPayment = new ValPaymentObj();
-        var eachPayment = valPayment.validatePayment(payment);
+        var eachPayment = valPayment.valPayment(payment);
         if (Object.keys(eachPayment.message).length > 0) {
             messages = eachPayment.message; }
         valid.push(eachPayment.isValid); });
