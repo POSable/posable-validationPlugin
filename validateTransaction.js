@@ -32,6 +32,7 @@ ValTransactionObj.prototype.valCashierID = function() {
 ValTransactionObj.prototype.valTransPayments = function() {
     var messages = [];
     var valid = [];
+    console.log(this.payments);
     this.payments.forEach(function (payment) {
         var valPayment = new ValPaymentObj();
         var eachPayment = valPayment.valPayment(payment);
@@ -44,7 +45,7 @@ ValTransactionObj.prototype.valTransPayments = function() {
 
 ValTransactionObj.prototype.valTransaction = function(transactionDTO) {
     this.payload = transactionDTO.transaction;
-    this.payments = transactionDTO.transactionPayments;
+    this.payments = transactionDTO.transaction.transactionPayments;
 
     this.valTransactionID();
     this.valMerchantID();
