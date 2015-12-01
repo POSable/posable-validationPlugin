@@ -39,21 +39,6 @@ ValPaymentObj.prototype.valTax = function() {
         this.message.tax = 'Invalid tax amount';
         this.isValid = false; } };
 
-ValPaymentObj.prototype.valTerminalID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.terminalID)) {
-        this.message.terminalID = 'Invalid terminal ID';
-        this.isValid = false; } };
-
-ValPaymentObj.prototype.valMerchantID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.merchantID)) {
-        this.message.merchantID = 'Invalid merchant ID';
-        this.isValid = false; } };
-
-ValPaymentObj.prototype.valCashierID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.cashierID)) {
-        this.message.cashierID = 'Invalid cashier ID';
-        this.isValid = false; } };
-
 ValPaymentObj.prototype.valPaymentType = function() {
     if (!this.validator.isIn(this.payload.paymentType, ['cash', 'credit'])) {
         this.message.paymentType = 'Invalid payment type';
@@ -69,22 +54,13 @@ ValPaymentObj.prototype.valDate = function() {
         this.message.dateTime = 'Invalid Date/Time';
         this.isValid = false; } };
 
-ValPaymentObj.prototype.valTransactionID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.transactionID)) {
-        this.message.transactionID = 'Invalid transaction ID';
-        this.isValid = false; } };
-
 ValPaymentObj.prototype.valPayment = function(paymentDTO) {
     this.payload = paymentDTO;
 
-    this.valTerminalID();
-    this.valTransactionID();
     this.valDate();
     this.valAmount();
     this.valPaymentType();
     this.valTax();
-    this.valMerchantID();
-    this.valCashierID();
     this.valUID();
 
     if (this.payload.paymentType === 'credit') {
