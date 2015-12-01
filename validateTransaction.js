@@ -44,7 +44,7 @@ ValTransactionObj.prototype.valTransPayments = function() {
 
 ValTransactionObj.prototype.valTransaction = function(transactionDTO) {
     this.payload = transactionDTO.transaction;
-    this.payments = transactionDTO.transaction.transactionPayments;
+    this.payments = transactionDTO.transactionPayments;
 
     this.valTransactionID();
     this.valMerchantID();
