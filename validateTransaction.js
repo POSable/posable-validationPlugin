@@ -43,9 +43,9 @@ ValTransactionObj.prototype.valTransPayments = function() {
     this.message.payments = messages;
     if (valid.indexOf(false) > -1){ this.isValid = false; } };
 
-ValTransactionObj.prototype.valTransaction = function(transactionDTO) {
-    this.payload = transactionDTO.transaction;
-    this.payments = transactionDTO.transaction.transactionPayments;
+ValTransactionObj.prototype.valTransaction = function(transaction) {
+    this.payload = transaction;
+    this.payments = transaction.transactionPayments;
 
     this.valTransactionID();
     this.valMerchantID();

@@ -14,24 +14,14 @@ function ValPaymentObj() {
         this.isValid = true;
 }
 
-ValPaymentObj.prototype.valCardType = function() {
-    if (!this.validator.isIn(this.payload.creditCard.cardType, ['visa', 'mastercard', 'discover', 'amex'])) {
-        this.message.cardType = 'Invalid card type';
+ValPaymentObj.prototype.valDate = function() {
+    if (!this.validator.isDate(this.payload.dateTime)) {
+        this.message.dateTime = 'Invalid Date/Time';
         this.isValid = false; } };
 
 ValPaymentObj.prototype.valAmount = function() {
     if (!this.validator.isCurrency(this.payload.amount)) {
         this.message.amount = 'Invalid amount';
-        this.isValid = false; } };
-
-ValPaymentObj.prototype.valLast4 = function() {
-    if (!this.validator.isLast4(this.payload.creditCard.last4)) {
-        this.message.last4 = 'Last 4 of card invalid';
-        this.isValid = false; } };
-
-ValPaymentObj.prototype.valAuthCode = function() {
-    if (!this.validator.isAuthCode(this.payload.creditCard.authCode)) {
-        this.message.authCode = 'Invalid authorization code';
         this.isValid = false; } };
 
 ValPaymentObj.prototype.valTax = function() {
@@ -49,9 +39,19 @@ ValPaymentObj.prototype.valUID = function() {
         this.message.uid = 'Invalid UID';
         this.isValid = false; } };
 
-ValPaymentObj.prototype.valDate = function() {
-    if (!this.validator.isDate(this.payload.dateTime)) {
-        this.message.dateTime = 'Invalid Date/Time';
+ValPaymentObj.prototype.valCardType = function() {
+    if (!this.validator.isIn(this.payload.cardType, ['visa', 'mastercard', 'discover', 'amex'])) {
+        this.message.cardType = 'Invalid card type';
+        this.isValid = false; } };
+
+ValPaymentObj.prototype.valLast4 = function() {
+    if (!this.validator.isLast4(this.payload.last4)) {
+        this.message.last4 = 'Last 4 of card invalid';
+        this.isValid = false; } };
+
+ValPaymentObj.prototype.valAuthCode = function() {
+    if (!this.validator.isAuthCode(this.payload.authCode)) {
+        this.message.authCode = 'Invalid authorization code';
         this.isValid = false; } };
 
 ValPaymentObj.prototype.valPayment = function(paymentDTO) {
