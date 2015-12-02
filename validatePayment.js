@@ -54,8 +54,8 @@ ValPaymentObj.prototype.valAuthCode = function() {
         this.message.authCode = 'Invalid authorization code';
         this.isValid = false; } };
 
-ValPaymentObj.prototype.valPayment = function(paymentDTO) {
-    this.payload = paymentDTO;
+ValPaymentObj.prototype.valPayment = function(payment) {
+    this.payload = payment;
 
     this.valDate();
     this.valAmount();
