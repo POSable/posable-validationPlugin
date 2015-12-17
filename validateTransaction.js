@@ -29,6 +29,11 @@ ValTransactionObj.prototype.valCashierID = function() {
         this.message.cashierID = 'Invalid cashier ID';
         this.isValid = false; } };
 
+ValTransactionObj.prototype.valDate = function() {
+    if (!this.validator.isDate(this.payload.transactionDateTime)) {
+        this.message.dateTime = 'Invalid Date/Time';
+        this.isValid = false; } };
+
 ValTransactionObj.prototype.valTransPayments = function() {
     var messages = [];
     var valid = [];
@@ -51,6 +56,7 @@ ValTransactionObj.prototype.valTransaction = function(transaction) {
     this.valMerchantID();
     this.valTerminalID();
     this.valCashierID();
+    this.valDate();
     this.valTransPayments();
 
     return this;
