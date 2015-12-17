@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5f34bac-6269-4d48-b65f-5e0c21067167" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validateTransaction.js" afterPath="$PROJECT_DIR$/validateTransaction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e5f34bac-6269-4d48-b65f-5e0c21067167" name="Default" comment="" />
     <ignored path="posable-validationPlugin.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +44,8 @@
       <file leaf-file-name="validateTransaction.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/validateTransaction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40376568">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="34" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.5292887">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -563,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/validateTransaction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40376568">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="34" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.5292887">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>

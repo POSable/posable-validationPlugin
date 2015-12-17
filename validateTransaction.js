@@ -30,7 +30,7 @@ ValTransactionObj.prototype.valCashierID = function() {
         this.isValid = false; } };
 
 ValTransactionObj.prototype.valDate = function() {
-    if (!this.validator.isDate(this.payload.transactionDateTime)) {
+    if (!this.validator.isDate(this.payload.dateTime)) {
         this.message.dateTime = 'Invalid Date/Time';
         this.isValid = false; } };
 
