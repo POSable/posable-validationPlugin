@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/POSable/posable-validationPlugin#readme",
   "dependencies": {
-    "posable-logging-plugin": "git+ssh://git@github.com/POSable/posable-logPlugin.git",
     "validator": "^4.2.1"
   },
   "devDependencies": {
