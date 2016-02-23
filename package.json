@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/POSable/posable-validationPlugin#readme",
   "dependencies": {
-    "validator": "^4.2.1"
+    "validator": "4.2.1"
   },
   "devDependencies": {
     "jasmine": "^2.3.2"
