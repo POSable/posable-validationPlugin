@@ -34,6 +34,11 @@ ValTransactionObj.prototype.valDate = function() {
         this.message.dateTime = 'Invalid Date/Time';
         this.isValid = false; } };
 
+ValTransactionObj.prototype.valTax = function() {
+    if (!this.validator.isCurrency(this.payload.taxes)) {
+        this.message.taxes = 'Invalid tax amount';
+        this.isValid = false; } };
+
 ValTransactionObj.prototype.valTransPayments = function() {
     var messages = [];
     var valid = [];
@@ -58,6 +63,7 @@ ValTransactionObj.prototype.valTransaction = function(transaction) {
     this.valCashierID();
     this.valDate();
     this.valTransPayments();
+    this.valTax();
 
     return this;
 };

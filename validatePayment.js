@@ -24,19 +24,9 @@ ValPaymentObj.prototype.valAmount = function() {
         this.message.amount = 'Invalid amount';
         this.isValid = false; } };
 
-ValPaymentObj.prototype.valTax = function() {
-    if (!this.validator.isCurrency(this.payload.tax)) {
-        this.message.tax = 'Invalid tax amount';
-        this.isValid = false; } };
-
 ValPaymentObj.prototype.valPaymentType = function() {
     if (!this.validator.isIn(this.payload.paymentType, ['cash', 'credit'])) {
         this.message.paymentType = 'Invalid payment type';
-        this.isValid = false; } };
-
-ValPaymentObj.prototype.valUID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.uid)) {
-        this.message.uid = 'Invalid UID';
         this.isValid = false; } };
 
 ValPaymentObj.prototype.valCardType = function() {
@@ -60,8 +50,6 @@ ValPaymentObj.prototype.valPayment = function(payment) {
     this.valDate();
     this.valAmount();
     this.valPaymentType();
-    this.valTax();
-    this.valUID();
 
     if (this.payload.paymentType === 'credit') {
         this.valCardType();
