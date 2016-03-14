@@ -14,19 +14,9 @@ ValTransactionObj.prototype.valTransactionID = function() {
         this.message.transactionID = 'Invalid transaction ID';
         this.isValid = false; } };
 
-ValTransactionObj.prototype.valMerchantID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.merchantID)) {
-        this.message.merchantID = 'Invalid merchant ID';
-        this.isValid = false; } };
-
-ValTransactionObj.prototype.valTerminalID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.terminalID)) {
-        this.message.terminalID = 'Invalid terminal ID';
-        this.isValid = false; } };
-
-ValTransactionObj.prototype.valCashierID = function() {
-    if (!this.validator.isAlphanumeric(this.payload.cashierID)) {
-        this.message.cashierID = 'Invalid cashier ID';
+ValTransactionObj.prototype.valInternalID = function() {
+    if (!this.validator.isAlphanumeric(this.payload.internalID)) {
+        this.message.internalID = 'Invalid internal ID';
         this.isValid = false; } };
 
 ValTransactionObj.prototype.valDate = function() {
@@ -34,10 +24,25 @@ ValTransactionObj.prototype.valDate = function() {
         this.message.dateTime = 'Invalid Date/Time';
         this.isValid = false; } };
 
-ValTransactionObj.prototype.valTax = function() {
-    if (!this.validator.isCurrency(this.payload.taxes)) {
-        this.message.taxes = 'Invalid tax amount';
-        this.isValid = false; } };
+//ValTransactionObj.prototype.valMerchantID = function() {
+//    if (!this.validator.isAlphanumeric(this.payload.merchantID)) {
+//        this.message.merchantID = 'Invalid merchant ID';
+//        this.isValid = false; } };
+
+//ValTransactionObj.prototype.valTerminalID = function() {
+//    if (!this.validator.isAlphanumeric(this.payload.terminalID)) {
+//        this.message.terminalID = 'Invalid terminal ID';
+//        this.isValid = false; } };
+
+//ValTransactionObj.prototype.valCashierID = function() {
+//    if (!this.validator.isAlphanumeric(this.payload.cashierID)) {
+//        this.message.cashierID = 'Invalid cashier ID';
+//        this.isValid = false; } };
+
+//ValTransactionObj.prototype.valTax = function() {
+//    if (!this.validator.isCurrency(this.payload.taxes)) {
+//        this.message.taxes = 'Invalid tax amount';
+//        this.isValid = false; } };
 
 ValTransactionObj.prototype.valTransPayments = function() {
     var messages = [];
@@ -58,12 +63,13 @@ ValTransactionObj.prototype.valTransaction = function(transaction) {
     this.payments = transaction.transactionPayments;
 
     this.valTransactionID();
-    this.valMerchantID();
-    this.valTerminalID();
-    this.valCashierID();
     this.valDate();
+    this.valInternalID();
     this.valTransPayments();
-    this.valTax();
+    //this.valTax();
+    //this.valMerchantID();
+    //this.valTerminalID();
+    //this.valCashierID();
 
     return this;
 };

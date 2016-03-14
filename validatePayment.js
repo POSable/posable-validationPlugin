@@ -14,18 +14,13 @@ function ValPaymentObj() {
         this.isValid = true;
 }
 
-ValPaymentObj.prototype.valDate = function() {
-    if (!this.validator.isDate(this.payload.dateTime)) {
-        this.message.dateTime = 'Invalid Date/Time';
-        this.isValid = false; } };
-
 ValPaymentObj.prototype.valAmount = function() {
     if (!this.validator.isCurrency(this.payload.amount)) {
         this.message.amount = 'Invalid amount';
         this.isValid = false; } };
 
 ValPaymentObj.prototype.valPaymentType = function() {
-    if (!this.validator.isIn(this.payload.paymentType, ['cash', 'credit'])) {
+    if (!this.validator.isIn(this.payload.paymentType, ['cash', 'credit', 'ebt', 'fsa', 'gift', 'loyalty', 'debit'])) {
         this.message.paymentType = 'Invalid payment type';
         this.isValid = false; } };
 
@@ -47,11 +42,10 @@ ValPaymentObj.prototype.valAuthCode = function() {
 ValPaymentObj.prototype.valPayment = function(payment) {
     this.payload = payment;
 
-    this.valDate();
     this.valAmount();
     this.valPaymentType();
 
-    if (this.payload.paymentType === 'credit') {
+    if (this.payload.paymentType === 'credit' || 'debit') {
         this.valCardType();
         this.valLast4();
         this.valAuthCode(); }
