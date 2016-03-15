@@ -20,12 +20,12 @@ ValPaymentObj.prototype.valAmount = function() {
         this.isValid = false; } };
 
 ValPaymentObj.prototype.valPaymentType = function() {
-    if (!this.validator.isIn(this.payload.paymentType, ['cash', 'credit', 'ebt', 'fsa', 'gift', 'loyalty', 'debit'])) {
+    if (!this.validator.isIn(this.payload.paymentType.toLowerCase(), ['cash', 'credit', 'ebt', 'fsa', 'gift', 'loyalty', 'debit'])) {
         this.message.paymentType = 'Invalid payment type';
         this.isValid = false; } };
 
 ValPaymentObj.prototype.valCardType = function() {
-    if (!this.validator.isIn(this.payload.cardType, ['visa', 'mastercard', 'discover', 'amex'])) {
+    if (!this.validator.isIn(this.payload.cardType.toLowerCase(), ['visa', 'mastercard', 'discover', 'amex'])) {
         this.message.cardType = 'Invalid card type';
         this.isValid = false; } };
 

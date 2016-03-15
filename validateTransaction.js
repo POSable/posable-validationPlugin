@@ -47,7 +47,6 @@ ValTransactionObj.prototype.valDate = function() {
 ValTransactionObj.prototype.valTransPayments = function() {
     var messages = [];
     var valid = [];
-    console.log(this.payments);
     this.payments.forEach(function (payment) {
         var valPayment = new ValPaymentObj();
         var eachPayment = valPayment.valPayment(payment);
