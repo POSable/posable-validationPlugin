@@ -45,7 +45,7 @@ ValPaymentObj.prototype.valPayment = function(payment) {
     this.valAmount();
     this.valPaymentType();
 
-    if (this.payload.paymentType === 'credit' || 'debit') {
+    if (this.payload.paymentType.toLowerCase() === 'credit' || this.payload.paymentType.toLowerCase() === 'debit') {
         this.valCardType();
         this.valLast4();
         this.valAuthCode(); }
