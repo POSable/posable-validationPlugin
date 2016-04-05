@@ -15,7 +15,7 @@ function ValPaymentObj() {
 }
 
 ValPaymentObj.prototype.valAmount = function() {
-    if (!this.validator.isCurrency(this.payload.amount)) {
+    if (!this.validator.isFloat(this.payload.amount)) {
         this.message.amount = 'Invalid amount';
         this.isValid = false; } };
 
